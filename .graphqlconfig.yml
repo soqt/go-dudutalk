@@ -1,0 +1,10 @@
+projects:
+  dudutalk:
+    schemaPath: cmd/graphQL/schema/schema.graphql
+    extensions:
+      endpoints:
+        default: http://localhost:8080/graphql
+  prisma:
+    schemaPath: prisma/generated/prisma.graphql   # define schema for prisma api
+    extensions:
+      prisma: prisma/prisma.yml

@@ -1,0 +1,19 @@
+# The HTTP endpoint for Prisma API
+endpoint: http://${env:PRISMA_HOST}:4466/dudutalk/${env:PRISMA_STAGE}
+datamodel:
+  - model/user.prisma
+  - model/otp.prisma
+
+# You can only access the API when providing JWTs that are signed with this secret
+secret: ${env:PRISMA_SECRET}
+
+# Specifies the language and directory for the generated Prisma client.
+generate:
+  - generator: go-client
+    output: ../internal/storage/prisma
+  - generator: graphql-schema
+    output: ../prisma/generated/prisma.graphql
+
+# Seeds initial data into the datamodel by running a scripts.
+# seed:
+#   run: go run ./prisma/seed.go

@@ -1,0 +1,6 @@
+type Otp {
+    id:               ID!      @id
+    phone:            String!  @unique
+    code:             String!
+    createdAt:        DateTime!         @createdAt
+}

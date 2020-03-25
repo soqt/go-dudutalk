@@ -1,0 +1,9 @@
+type User {
+    id:               ID!      @id
+    phone:            String!  @unique
+    nickname:         String
+    avatar:           String
+    createdAt:        DateTime!         @createdAt
+    updatedAt:        DateTime!         @updatedAt
+}
+
